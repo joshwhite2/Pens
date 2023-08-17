@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nanum+Myeongjo&family=Poppins:wght@200&display=swap");
+
+* {
+  font-family: "Nanum Myeongjo", serif;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.productList {
+  max-width: 1580px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.productItem {
+  width: 275px;
+  margin: 17px;
+  padding-top: 22px;
+  border-top: solid lightgrey 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.itemDisplay {
+  height: 160px;
+  width: 240px;
+}
+
+.productImage {
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.price {
+  display: none;
+}
+
+/* show price when hovering over image */
+.itemDisplay:hover + .price {
+  width: 240px;
+  height: 120px;
+  display: inline;
+  position: absolute;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.682));
+  text-align: center;
+  line-height: 180px;
+  font-size: 16pt;
+  font-weight: bold;
+  top: 62px;
+  pointer-events: none;
+}
+
+.productLabel {
+  align-items: center;
+  font-size: 10pt;
+  display: inline;
+  width: 210px;
+  text-align: center;
+}
+
+.productLabel img {
+  height: 26px;
+  position: absolute;
+  margin-right: 18px;
+  right: 0;
+  top: 195px;
+}
+
+.dropImage {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
+
+.btn1 {
+  font-size: 14pt;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background-color: lightgray;
+  width: 170px;
+  height: 48px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.btn1 img {
+  height: 20px;
+}
+
+.btn2 {
+  background-color: lightgreen;
+}
+
+/*change size of button on click*/
+button:active,
+.cart-button:active {
+  transform: scale(95%);
+}
+
+.header {
+  height: 0px;
+  top: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  padding: 25px;
+  justify-content: end;
+  align-items: center;
+  font-size: 15pt;
+  font-weight: bold;
+  position: sticky;
+  z-index: 1;
+  border-bottom: 1px solid lightgray;
+}
+
+.header img {
+  height: 25px;
+}
+
+.homeImages {
+  flex-wrap: nowrap;
+  display: block;
+  white-space: nowrap;
+  overflow: visible;
+  margin: 30px 0px 50px 0px;
+}
+
+.homeImages img {
+  width: 260px;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.enter {
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 50px;
+}
+
+.socials {
+  border-top: lightgray solid 8px;
+  margin: auto;
+  margin-top: 15px;
+  width: 180px;
+}
+
+.socialsIcons {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+aside {
+  top: 0;
+  left: 0;
+  float: left;
+  width: 210px;
+  height: 100vh;
+  text-align: center;
+  position: sticky;
+  z-index: 2;
+  background-color: white;
+}
+
+.links {
+  font-weight: bold;
+  font-size: 14pt;
+  line-height: 140%;
+  padding: 10px;
+  width: 110px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: solid lightgrey 8px;
+  border-bottom: solid lightgrey 8px;
+}
+
+.links a:hover {
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+.cart-button {
+  cursor: pointer;
+}
+
+.cart-preview {
+  position: absolute;
+  top: 100%; /* Position the dropdown below the cart icon */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  z-index: 1000;
+  display: none; /* Initially hide the dropdown */
+}
+
+.cart-icon:hover .cart-preview {
+  display: block; /* Show the dropdown on hover */
+}
+
+.cart-card {
+  background-color: #f5f5f5;
+  color: black;
+  border: 2px solid silver;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  padding: 3px;
+  margin-bottom: 3px;
+  position: relative;
+}
+
+.card {
+  background-color: #f5f5f5;
+  color: black;
+  width: 600px;
+  border: 2px solid silver;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.summary {
+  border: 3px solid lightgray;
+  width: 300px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.cart {
+  position: relative;
+  margin-left: 250px;
+}
+
+.details {
+  display: flex;
+  width: 650px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+}
+
+.detailsPrice {
+  font-size: 20pt;
+  font-weight: normal;
+}
+
+.detailsImage {
+  width: 450px;
+  height: auto;
+  align-self: center;
+}
+
+.detailsName {
+  font-size: 36pt;
+  font-family: "Great Vibes", cursive;
+  margin: 25px;
+}
+
+.productImage {
+  align-self: center;
+}
+
+.logo h1,
+.logo h4 {
+  font-family: "Great Vibes", cursive;
+}
+
+.logo h1 {
+  margin-bottom: -26px;
+  margin-top: 40px;
+  font-size: 60pt;
+}
+
+.logo h4 {
+  margin: 0px;
+  font-size: 36pt;
+}
+
+.checkout {
+  float: left;
+  margin-left: 40px;
+}
+
+.checkout label {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 10px;
+}
+
+.pay-drop select {
+  width: 60px;
+}
+
+#contact {
+  margin: 40px;
+  float: left;
+}
+
+#contactLinks {
+  display: flex;
+}
+
+.confirm {
+  display: block;
+  text-align: center;
+  margin-top: 100px;
+}
